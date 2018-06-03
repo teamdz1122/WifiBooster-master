@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/ly_top"
+        layout="@layout/view_top1">
+    </include>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/view_top"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_210sdp"
+                android:background="@drawable/bg_gradien_boot_net">
+
+                <com.binhdz.wifibooster.view.BinhdzProgressBar
+                    android:id="@+id/real_cpu__prg_storate"
+                    android:layout_width="@dimen/_135sdp"
+                    android:layout_height="@dimen/_135sdp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignTop="@+id/real_cpu__prg_cpu"
+                    android:layout_marginLeft="@dimen/_45sdp"
+                    android:layout_marginStart="@dimen/_45sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    app:colorTextValue="@color/color_prg_text_value"
+                    app:isShowTitle="true"
+                    app:isShowValue="false"
+                    app:max="100"
+                    app:positionStart="45"
+                    app:ringColor="#E6E9F6"
+                    app:ringProgressColor="@color/color_prg_normal"
+                    app:ringWidth="@dimen/_3sdp"
+                    app:style="STROKE"
+                    app:textColor="@color/color_while"
+                    app:textSize="45sp"
+                    app:textSizeTitle="22sp"
+                    app:textSizeValue="16sp"
+                    app:textTitle="RAM"
+                    app:textValue="3.4GB/11GB" />
+
+                <com.binhdz.wifibooster.view.BinhdzProgressBar
+                    android:id="@+id/real_cpu__prg_cpu"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_above="@+id/real_cpu__prg_ram"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_toEndOf="@+id/real_cpu__prg_storate"
+                    android:layout_toRightOf="@+id/real_cpu__prg_storate"
+                    app:isPrgCPU="false"
+                    app:isShowTitle="true"
+                    app:max="100"
+                    app:positionStart="90"
+                    app:ringColor="#E6E9F6"
+                    app:ringProgressColor="@color/color_prg_normal"
+                    app:ringWidth="@dimen/_3sdp"
+                    app:style="STROKE"
+                    app:textColor="@color/color_while"
+                    app:textSize="20sp"
+                    app:textSizeTitle="10sp"
+                    app:textSizeValue="12sp"
+                    app:textTitle="STORAGE"
+                    app:textValue="3.4GB/11GB"/>
+
+                <com.binhdz.wifibooster.view.BinhdzProgressBar
+                    android:id="@+id/real_cpu__prg_ram"
+                    android:layout_width="@dimen/_95sdp"
+                    android:layout_height="@dimen/_95sdp"
+                    android:layout_alignEnd="@+id/real_cpu__prg_cpu"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignRight="@+id/real_cpu__prg_cpu"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    app:colorTextValue="@color/color_prg_text_value"
+
+                    app:isShowTitle="true"
+                    app:isShowValue="false"
+                    app:max="100"
+                    app:positionStart="90"
+                    app:ringColor="#E6E9F6"
+                    app:ringProgressColor="@color/color_prg_hight"
+                    app:ringWidth="@dimen/_3sdp"
+                    app:style="STROKE"
+                    app:textColor="@color/color_while"
+                    app:textSize="28sp"
+                    app:textSizeTitle="18sp"
+                    app:textSizeValue="12sp"
+                    app:textTitle="CPU"
+                    app:textValue="3.4GB/11GB" />
+            </RelativeLayout>
+
+            <com.binhdz.wifibooster.view.loading.LoadingView
+                android:id="@+id/real_cpu__loding_fish_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:loading_renderer="FishLoadingRenderer" />
+            <com.google.android.gms.ads.NativeExpressAdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/ads_real_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                ads:adSize="SMART_BANNER"
+                ads:adUnitId="ca-app-pub-9569615767688214/5083951357"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/real_cpu__rcv_list_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#1C72B4</color>
+    <color name="colorAccent">#04C45A</color>
+
+    <color name="color_black">#212121</color>
+    <color name="color_while">#ffffff</color>
+    <color name="color_bg_wifi">#F5F5F5</color>
+
+    <color name="text_close_hotspot">#FEA13A</color>
+    <color name="text_open_hotspot">#15BB5E</color>
+    <color name="color_bottom_bar">#1c72b4</color>
+    <color name="color_view_top">#1A619B</color>
+
+    // color progress
+    <color name="color_prg_normal">#04C45A</color>
+    <color name="color_prg_hight">#F8A81E</color>
+    <color name="color_prg_hot">#D21818</color>
+    <color name="color_prg_text">#445077</color>
+    <color name="color_prg_text_value">#ADAFBE</color>
+    <color name="color_while_blur">#cfdbe9</color>
+    <color name="divider_color">#CCC</color>
+</resources>

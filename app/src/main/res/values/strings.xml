@@ -1,0 +1,126 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Network Speed</string>
+    <string name="permission_alert">android 6.0</string>
+    <string name="permission_result">Please. Allows the app to operate!</string>
+    <string name="boot_wifi">Boot Network</string>
+    <string name="password">Password</string>
+    <string name="show_pass">Show password</string>
+    <string name="tv_cancel">Cancel</string>
+    <string name="connect">Connect</string>
+    <string name="free_wifi">Free Wifi</string>
+    <string name="pass_required">Password required</string>
+    <string name="scan" tools:ignore="TypographyEllipsis">Scanning...</string>
+    <string name="speed_booted">Speed boosted</string>
+    <string name="system_boot">System Boost</string>
+    <string name="app_in_background">Apps are using network in background</string>
+    <string name="network_boot">Network Boost</string>
+    <string name="clear_system_cache">Clear system cache</string>
+    <string name="wifi_connect">Wi-Fi connected</string>
+
+    // home
+
+    <dimen name="spacing_normal">2dp</dimen>
+
+    <string name="ckeck_again">Check Again</string>
+    <string name="set_password">Set password</string>
+    <string name="des_mobie_hostpot">This feature turns your 2/3/4G network into a WiFi hotspot. Name and passwork combo is highly recommended to project your data usage.</string>
+    <string name="please_input_name_hotspot">Please fill in the hotspot name</string>
+    <string name="please_input_pass_hotspot">Please fill in the hotspot password</string>
+    <string name="mobie_hostpot">Mobile hotspot</string>
+    <string name="wifi_optimize">WiFi Optimize</string>
+    <string name="des_net_boost">Clean background apps for the best network speed !</string>
+    <string name="real_cpu">Real-time Process info</string>
+    <string name="bt_hostpot_wifi">Personal Hotspot</string>
+    <string name="des_bt_hotspot_wifi">Have a portable WiFi hotspot easily!</string>
+
+    <string name="not_network_connected">None of network is connected!</string>
+    <!--<string name="mobie_data"></string>-->
+
+    //dialog bottom
+    <string name="bottom_dialog_check">Safety Check</string>
+    <string name="bottom_dialog_conntected">Connect Test</string>
+    <string name="bottom_dialog_speed_test">Speed Test</string>
+    <string name="bottom_dialog_info">Wifi Info</string>
+    <string name="bottom_dialog_forget">Forget</string>
+    <string name="bottom_dialog_disconnect">Disconnect</string>
+    <string name="speed_is_booted">Speed is boosted</string>
+
+    <string name="ckeck_connect">Connection Test</string>
+    <string name="ckeck_connect_des_1">Calibrate wireless module</string>
+    <string name="ckeck_connect_des_2">Optimize wireless module</string>
+    <string name="ckeck_connect_des_3">Select an optimal configurtion</string>
+    <string name="ckeck_connect_des_4">Optimize network conection</string>
+
+    <string name="ckeck_safe_des_1">Obtaining Wi-Fi information</string>
+    <string name="ckeck_safe_des_2">Checking DNS hijacking</string>
+    <string name="ckeck_safe_des_3">Checking Wi-Fi Encryption</string>
+    <string name="ckeck_safe_des_4">Checking ARP cheating</string>
+
+    <string name="setting_status_bar">Status notification</string>
+    <string name="setting_free_wifi">Free Wi-Fi notification</string>
+    <string name="setting_screen_lock">Screen lock data motitor</string>
+    <string name="setting_mobie_data">Mobie data usage daily report</string>
+    <string name="setting_rating_google">Rating on Google Play</string>
+    <string name="bottom_dialog_connect">Connect</string>
+    <string name="bottom_dialog_change_pass">Change Password</string>
+    <string name="list_wifi_none_pass">Public Wi-Fi</string>
+    <string name="warning_boots_network">Apps slow down Wi-Fi speed, boots it up now!</string>
+    <string name="warning_cpu">CPU Usage over 50%, making your phone hot. !</string>
+    <string name="enable_wifi">Wi-Fi disabled</string>
+    <string name="des_enable_wifi">Open Wi-Fi to get avalilable networks!</string>
+    <string name="turn_on_wifi">Turn on</string>
+
+    <string name="state_connect_success">Connect Sucessfull</string>
+    <string name="state_connect_error">Connect Error</string>
+    <string name="title_splash">Small,Fast and Safe</string>
+    <string name="scan_wifi" tools:ignore="TypographyEllipsis">Scanning Wi-Fi...</string>
+    <string name="opent_network">Open Network</string>
+
+    <string name="setting_turn_on_status">Turn on Status Notification</string>
+    <string name="setting_turn_on_mobie">Turn on Mobie data usage daily report</string>
+    <string name="setting_turn_on_screen">Turn on Screen lock data motitor</string>
+    <string name="setting_turn_on_free">Turn on Free Wi-Fi notification</string>
+
+    <string name="setting_turn_off_status">Turn off Status Notification</string>
+    <string name="setting_turn_off_mobie">Turn off Mobie data usage daily report</string>
+    <string name="setting_turn_off_screen">Turn off Screen lock data motitor</string>
+    <string name="setting_turn_off_free">Turn off Free Wi-Fi notification</string>
+    <string name="encryption">Encryption</string>
+    <string name="signal_strength">Signal strength</string>
+    <string name="frequency">frequency</string>
+    <string name="wifi_safe">Connected this Wi-Fi before, Wi-Fi safe.</string>
+    <string name="wifi_never_connected">Never connected this Wi-Fi before.</string>
+    <string name="connect_anyway">Connect Anyway</string>
+
+    //them
+    <string name="check_connect_fail">Connect failed !</string>
+    <string name="ckeck_conenct_fail_des">Can not connect. Please check network.</string>
+
+    <string name="check_connect_suscess">Overall optimized!</string>
+    <string name="check_connect_sucsess_des">All safety checks passed.</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="forget_pass_suscess">Forget Wi-Fi</string>
+    <string name="stop">Stop</string>
+    <string name="open">Open</string>
+    <string name="name_app">Name app</string>
+    <string name="name_wifi">Name Wifi</string>
+    <string name="name_safe">Wifi Safe</string>
+    <string name="name">Name</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="mac">Mac</string>
+    <string name="connect_before">Connect before</string>
+    <string name="ma_hoa">Encode</string>
+    <string name="fre_quency">Frequency</string>
+    <string name="ckeck">Check</string>
+    <string name="boots_now">Boost Now</string>
+    <string name="_10kb">10kb</string>
+    <!--//<string name="binh_dz">binhdz</string>-->
+    <string name="tab_home">Home</string>
+    <string name="tab_wifi_expert">WiFi Expert</string>
+    <string name="tab_setting">Setting</string>
+    <string name="language">Language</string>
+    <string name="flash_mode">Flash Mode</string>
+    <string name="about">Introduction</string>
+    <string name="action_setting">Setting</string>
+</resources>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <include layout="@layout/view_top1"/>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_gradien_boot_net">
+    <ImageView
+        android:id="@+id/mobie_hostpot__iv_radar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/mobie_hostpot__iv_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:src="@drawable/ic_top_hostpot" />
+
+
+        <EditText
+            android:id="@+id/mobie_hostpot__edt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edt_not_selected"
+            android:drawableLeft="@drawable/ic_name_hotspot"
+            android:drawablePadding="@dimen/_10sdp"
+            android:gravity="center"
+            android:hint="@string/please_input_name_hotspot"
+            android:paddingRight="@dimen/_15sdp"
+            android:singleLine="true"
+            android:textColor="@color/color_black"
+            android:textSize="16sp"
+            android:drawableStart="@drawable/ic_name_hotspot"
+            android:paddingEnd="@dimen/_15sdp"
+            tools:ignore="RtlSymmetry" />
+
+        <EditText
+            android:id="@+id/mobie_hostpot__edt_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_edt_not_selected"
+            android:drawableLeft="@drawable/ic_pass_hotspot"
+            android:drawablePadding="@dimen/_10sdp"
+            android:gravity="center"
+            android:hint="@string/please_input_pass_hotspot"
+            android:paddingRight="@dimen/_15sdp"
+            android:singleLine="true"
+            android:textColor="@color/color_black"
+            android:textSize="16sp"
+            android:drawableStart="@drawable/ic_pass_hotspot"
+            android:paddingEnd="@dimen/_15sdp"
+            tools:ignore="RtlSymmetry" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <com.binhdz.wifibooster.view.MyTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/set_password"
+                android:textColor="@color/color_while"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:id="@+id/mobie_hostpot__iv_swith"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_swith_on"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.6"
+        android:background="@color/color_while"
+        android:orientation="vertical">
+
+        <com.binhdz.wifibooster.view.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:gravity="center_vertical"
+            android:text="@string/des_mobie_hostpot" />
+
+        <com.binhdz.wifibooster.view.MyTextViewBold
+            android:id="@+id/mobie_hostpot__tv_open"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/boder_bt_open_hostpot"
+            android:gravity="center"
+            android:text="@string/open"
+            android:textColor="#15BB5E"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <com.google.android.gms.ads.NativeExpressAdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mobie_hostpot__adview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-9569615767688214/5083951357"/>
+    </RelativeLayout>
+</LinearLayout>

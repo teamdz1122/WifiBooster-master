@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AvatarImageBehavior">
+        <attr name="finalYPosition" format="dimension"/>
+        <attr name="startXPosition" format="dimension"/>
+        <attr name="startToolbarPosition" format="dimension"/>
+        <attr name="startHeight" format="dimension"/>
+        <attr name="finalHeight" format="dimension"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="LoadingView">
+    <attr name="loading_renderer">
+
+        <enum name="FishLoadingRenderer" value="10"/>
+
+    </attr>
+    </declare-styleable>
+</resources>

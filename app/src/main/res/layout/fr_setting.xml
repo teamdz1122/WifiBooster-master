@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradien_boot_net"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/setting__view_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7">
+
+            <com.binhdz.wifibooster.view.MyTextViewBold
+                android:id="@+id/myTextViewBold2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/myTextViewBold"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_toEndOf="@+id/imageView"
+                android:layout_toRightOf="@+id/imageView"
+                android:text="1.0.0"
+                android:textColor="@color/color_while"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_icon_512" />
+
+            <com.binhdz.wifibooster.view.MyTextViewBold
+                android:id="@+id/myTextViewBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/myTextViewBold2"
+                android:layout_alignStart="@+id/myTextViewBold2"
+                android:layout_alignTop="@+id/imageView"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/app_name"
+                android:textColor="@color/color_while"
+                android:textSize="25sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/setting__view_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/relativeLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_weight="0.4"
+            android:background="@drawable/border_ly_setting"
+            android:orientation="vertical"
+            tools:ignore="ObsoleteLayoutParam">
+
+            <LinearLayout
+                android:id="@+id/fr_setting_rating_google"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_weight="0.9"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                tools:ignore="NestedWeights">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:src="@drawable/icon_rating" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:src="@drawable/icon_rating" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/setting_rating_google"
+                    android:textColor="#424242"
+                    android:textStyle="bold"
+                    android:textSize="15sp" />
+
+                <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginRight="@dimen/_5sdp"-->
+                    <!--android:layout_marginEnd="@dimen/_5sdp"-->
+                    <!--android:src="@drawable/icon_rating" />-->
+                <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginRight="@dimen/_5sdp"-->
+                    <!--android:layout_marginEnd="@dimen/_5sdp"-->
+                    <!--android:src="@drawable/icon_rating"/>-->
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider_color"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:src="@drawable/ic_setting_notifibar"
+                    android:layout_marginStart="@dimen/_8sdp" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="@string/setting_status_bar"
+                    android:textColor="#424242"
+                    android:textSize="16sp"
+                    android:layout_marginStart="@dimen/_10sdp" />
+
+                <ImageView
+                    android:id="@+id/fr_setting__iv_notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_setting_swith_on"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:src="@drawable/ic_setting_free_wifi" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="@string/setting_screen_lock"
+                    android:textColor="#424242"
+                    android:textSize="16sp"
+                    android:layout_marginStart="@dimen/_10sdp" />
+
+                <ImageView
+                    android:id="@+id/fr_setting__iv_scren_look"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_setting_swith_on"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:src="@drawable/ic_setting_mobie_data"
+                    android:layout_marginStart="@dimen/_8sdp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="@string/setting_mobie_data"
+                    android:textColor="#424242"
+                    android:textSize="15sp"
+                    android:layout_marginStart="@dimen/_10sdp" />
+
+                <ImageView
+                    android:id="@+id/fr_setting__iv_scren_mobie_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_setting_swith_on"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:src="@drawable/ic_setting_free_wifi_noti"
+                    android:layout_marginStart="@dimen/_8sdp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="@string/setting_free_wifi"
+                    android:textColor="#424242"
+                    android:textSize="15sp"
+                    android:layout_marginStart="@dimen/_10sdp" />
+
+                <ImageView
+                    android:id="@+id/fr_setting__iv_scren_free_wifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_setting_swith_on"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/fr_setting__iv_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:src="@drawable/icon_flashmob"
+        app:layout_anchor="@id/setting__view_top"
+        app:layout_anchorGravity="bottom|right|end"
+        android:layout_marginEnd="@dimen/_15sdp" />
+
+    <!--<ImageView-->
+        <!--android:id="@+id/fr_setting__flash"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="@dimen/_15sdp"-->
+        <!--android:src="@drawable/icon_flashmob"-->
+        <!--app:layout_anchor="@id/setting__view_top"-->
+        <!--app:layout_anchorGravity="bottom|left|end"-->
+        <!--android:layout_marginStart="@dimen/_15sdp" />-->
+
+</android.support.design.widget.CoordinatorLayout>

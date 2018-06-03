@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlLayoutBig"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp">
+
+    <TextView
+        android:id="@+id/tv_w_l"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="U↑:"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/_9sdp"/>
+
+    <TextView
+        android:id="@+id/tvWlanTx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/tv_w_l"
+        android:layout_toRightOf="@+id/tv_w_l"
+        android:text=""
+        android:textColor="#ffffff"
+        android:textSize="@dimen/_9sdp"/>
+    <TextView
+        android:id="@+id/tv_w_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_w_l"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/_9sdp"
+        android:text="D↓:"/>
+
+    <TextView
+        android:id="@+id/tvWlanRx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvWlanTx"
+        android:layout_toEndOf="@+id/tv_w_2"
+        android:layout_toRightOf="@+id/tv_w_2"
+        android:text=""
+        android:textColor="#ffffff"
+        android:textSize="@dimen/_9sdp"/>
+</RelativeLayout>

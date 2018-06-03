@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradien_boot_net"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/boot_net_iv_back"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:src="@drawable/ic_back"/>
+        <com.binhdz.wifibooster.view.MyTextViewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/app_name"
+            android:textColor="@color/color_while"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/boot_net__ly_top_scan"
+        android:layout_weight="2"
+        android:visibility="visible">
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/boot_net__iv_bg_scan"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_bg_scan"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/boot_net__iv_scan"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_scan"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/boot_net__iv_scanning"
+            android:layout_below="@+id/boot_net__iv_bg_scan"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:gravity="center"
+            android:text="@string/scan"
+            android:textSize="25sp"
+            android:textColor="@color/color_while"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/boot_net__ln_bottom_scan"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:visibility="visible"/>
+    <LinearLayout
+        android:id="@+id/boot_net__ln_boot_complete"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_20sdp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:src="@drawable/ic_boot_complete"/>
+            <com.binhdz.wifibooster.view.MyTextViewBold
+                android:id="@+id/boot_net__tv_booted_speed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+
+                android:singleLine="true"
+                android:text="@string/speed_is_booted"
+                android:textColor="@color/color_while"
+                android:textSize="22sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            tools:ignore="UselessLeaf">
+        </LinearLayout>
+    </LinearLayout>
+    <com.binhdz.wifibooster.view.loading.LoadingView
+        android:id="@+id/boot_net__loding_fish_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        app:loading_renderer="FishLoadingRenderer" />
+    // boot speed
+
+    <LinearLayout
+        android:id="@+id/boot_net_ln_top_speed"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:visibility="gone">
+        <com.binhdz.wifibooster.view.MyTextViewBold
+            android:id="@+id/boot_net__tv_boot_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_25sdp"
+            android:gravity="center"
+            android:text="10"
+            android:textColor="@color/color_while"
+            android:textSize="55sp"
+            android:layout_marginStart="@dimen/_25sdp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp">
+            <com.binhdz.wifibooster.view.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+
+                android:text="@string/speed_booted"
+                android:textColor="@color/color_while"
+                android:textSize="@dimen/_20sdp" />
+            <com.binhdz.wifibooster.view.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|top"
+                android:text="%"
+                android:textColor="@color/color_while"
+                android:textSize="@dimen/_20sdp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/boot_network__content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="horizontal"
+        android:visibility="gone"/>
+</LinearLayout>

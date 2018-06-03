@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_50sdp"
+    android:background="@drawable/border_item_wifi">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_8sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/item_net_cache__icon_app"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:scaleType="centerInside"
+            android:layout_marginStart="@dimen/_5sdp" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:ignore="NestedWeights">
+
+                <com.binhdz.wifibooster.view.MyTextView
+                    android:id="@+id/item_net_cache__tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:text="@string/name_app"
+                    android:textSize="15sp"
+                    android:layout_marginStart="5dp"
+                    android:paddingStart="5dp"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.binhdz.wifibooster.view.MyTextView
+                    android:id="@+id/item_net_cache__tv_cahce_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:singleLine="true"
+                    android:layout_marginRight="10dp"
+                    android:text="1.2 MB"
+                    android:textSize="12sp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/item_net_cache__iv_ckeck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_check_app_on"
+                android:layout_marginEnd="@dimen/_5sdp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

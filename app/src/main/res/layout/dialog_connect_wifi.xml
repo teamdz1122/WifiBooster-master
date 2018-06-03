@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_border_dialog_connect_wifi"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/dialog_wifi__iv_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/ic_level_wifi_4"
+            android:layout_marginStart="@dimen/_10sdp" />
+
+        <com.binhdz.wifibooster.view.MyTextView
+            android:id="@+id/dialog_wifi__tv_name_wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text="@string/name_wifi"
+            android:textColor="@color/color_black"
+            android:textSize="20sp"
+            android:layout_marginStart="@dimen/_10sdp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#1C72B4" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.binhdz.wifibooster.view.MyTextView
+            android:id="@+id/dialog_wifi__tv_mahoa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:singleLine="true"
+            android:text="@string/ma_hoa"
+            android:textSize="14sp"
+            android:layout_marginStart="@dimen/_10sdp" />
+
+        <com.binhdz.wifibooster.view.MyTextView
+            android:id="@+id/dialog_wifi__tv_frequency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:singleLine="true"
+            android:text="@string/fre_quency"
+            android:textSize="14sp"
+            android:layout_marginStart="@dimen/_10sdp" />
+
+        <com.binhdz.wifibooster.view.MyTextView
+            android:id="@+id/dialog_wifi__tv_mac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:singleLine="true"
+            android:text="@string/mac"
+            android:textSize="14sp"
+            android:layout_marginStart="@dimen/_10sdp" />
+
+        <com.binhdz.wifibooster.view.MyTextView
+            android:id="@+id/dialog_wifi__tv_connect_before"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+
+            android:singleLine="true"
+            android:text="@string/connect_before"
+            android:textSize="14sp"
+            android:layout_marginStart="@dimen/_10sdp" />
+
+        <com.binhdz.wifibooster.view.MyTextViewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:singleLine="true"
+            android:text="@string/password"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/_10sdp" />
+
+        <EditText
+            android:id="@+id/dialog_wifi__et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:background="@drawable/bd_edt_password"
+            android:textSize="18sp"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"/>
+
+        <CheckBox
+            android:id="@+id/dialog_wifi__cb_show_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="@string/show_pass"
+            android:layout_marginStart="@dimen/_10sdp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#1C72B4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.binhdz.wifibooster.view.MyTextViewBold
+            android:id="@+id/dialog_wifi__tv_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/tv_cancel"
+            android:textSize="20sp" />
+
+        <TextView android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="#1C72B4"/>
+        <com.binhdz.wifibooster.view.MyTextViewBold
+            android:id="@+id/dialog_wifi__tv_connect"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/connect"
+            android:textSize="20sp" />
+    </LinearLayout>
+</LinearLayout>

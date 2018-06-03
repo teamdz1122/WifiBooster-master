@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://E:\Android.batdaulam\WifiBooster-master\WifiBooster.iml" filepath="E:\Android.batdaulam\WifiBooster-master\WifiBooster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WifiBooster-master.iml" filepath="$PROJECT_DIR$/WifiBooster-master.iml" />
+      <module fileurl="file://E:\Project\WifiBooster-master\WifiBooster-master.iml" filepath="E:\Project\WifiBooster-master\WifiBooster-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\Project\WifiBooster-master\app\app.iml" filepath="E:\Project\WifiBooster-master\app\app.iml" />
+    </modules>
+  </component>
+</project>

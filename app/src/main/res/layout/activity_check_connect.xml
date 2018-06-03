@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradien_boot_net"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/check_connect__iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:src="@drawable/ic_back" />
+
+        <com.binhdz.wifibooster.view.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/ckeck_connect"
+            android:textColor="@color/color_while"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/ckeck_connect__ly_top_scan"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/ckeck_connect__iv_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_scan" />
+
+        <ImageView
+            android:id="@+id/ckeck_connect__iv_bg_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_bg_scan"/>
+
+        <ImageView
+            android:id="@+id/ckeck_connect__iv_bg_connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_bg_ckeck_connect" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ckeck_connect__ln_bottom_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1.1"
+        android:gravity="center_vertical|top"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ckeck_connect__iv_loading_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:src="@drawable/ic_loading_ckeck"
+                android:visibility="gone" />
+
+            <com.binhdz.wifibooster.view.MyTextView
+                android:id="@+id/ckeck_connect__tv_scanning_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/ckeck_connect_des_1"
+                android:textColor="@color/color_while_blur"
+                android:textSize="14sp"
+                tools:ignore="ObsoleteLayoutParam" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ckeck_connect__iv_loading_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:src="@drawable/ic_loading_ckeck"
+                android:visibility="gone"
+                android:layout_marginEnd="@dimen/_8sdp" />
+
+            <com.binhdz.wifibooster.view.MyTextView
+                android:id="@+id/ckeck_connect__tv_scanning_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+
+                android:text="@string/ckeck_connect_des_2"
+                android:textColor="@color/color_while_blur"
+                android:textSize="14sp"
+
+                tools:ignore="ObsoleteLayoutParam" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/_6sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ckeck_connect__iv_loading_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:src="@drawable/ic_loading_ckeck"
+                android:visibility="gone"
+               />
+
+            <com.binhdz.wifibooster.view.MyTextView
+                android:id="@+id/ckeck_connect__tv_scanning_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ckeck_connect_des_3"
+                android:textColor="@color/color_while_blur"
+                android:textSize="14sp"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/_6sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ckeck_connect__iv_loading_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_loading_ckeck"
+
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:visibility="gone"/>
+
+            <com.binhdz.wifibooster.view.MyTextView
+                android:id="@+id/ckeck_connect__tv_scanning_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ckeck_connect_des_4"
+                android:textColor="@color/color_while_blur"
+                android:textSize="14sp"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    // boots complete
+
+    <LinearLayout
+        android:id="@+id/ckeck_connect__ln_boot_complete"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        // set quang cao
+        <LinearLayout
+            android:id="@+id/ckeck_connect__ly_ad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
