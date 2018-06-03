@@ -149,7 +149,6 @@ public class HostpotWifiActivity extends AppCompatActivity implements View.OnCli
         wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void setDefaultEDT(boolean isDefault) {
         if (isDefault) {
 
@@ -159,10 +158,10 @@ public class HostpotWifiActivity extends AppCompatActivity implements View.OnCli
             etName.setFocusableInTouchMode(true);
 
             etName.setTextColor(getResources().getColor(R.color.color_black));
-            etName.setBackground(getResources().getDrawable(R.drawable.bg_edt_not_selected));
+            etName.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_edt_not_selected));
 
             etPass.setTextColor(getResources().getColor(R.color.color_black));
-            etPass.setBackground(getResources().getDrawable(R.drawable.bg_edt_not_selected));
+            etPass.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_edt_not_selected));
         } else {
 
             etPass.setFocusable(false);
@@ -172,15 +171,14 @@ public class HostpotWifiActivity extends AppCompatActivity implements View.OnCli
 
 
             etName.setTextColor(getResources().getColor(R.color.color_while));
-            etName.setBackground(getResources().getDrawable(R.drawable.bg_editext_name));
+            etName.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_editext_name));
 
             etPass.setTextColor(getResources().getColor(R.color.color_while));
-            etPass.setBackground(getResources().getDrawable(R.drawable.bg_editext_name));
+            etPass.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_editext_name));
         }
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -204,7 +202,7 @@ public class HostpotWifiActivity extends AppCompatActivity implements View.OnCli
                 if (!IS_ENABLE_HOSTPOT) {
                     tvOpen.setText("Close");
                     tvOpen.setTextColor(getResources().getColor(R.color.text_close_hotspot));
-                    tvOpen.setBackground(getResources().getDrawable(R.drawable.boder_bt_close_hostpot));
+                    tvOpen.setBackgroundDrawable(getResources().getDrawable(R.drawable.boder_bt_close_hostpot));
 
                     createWifiAccessPoint(nameHostpot, passHostpot);
                     SharedPreferences sp = getSharedPreferences("wifiHotspot", Context.MODE_PRIVATE);
@@ -215,7 +213,7 @@ public class HostpotWifiActivity extends AppCompatActivity implements View.OnCli
 
                     setMobileDataEnabled(true);
                     Toast.makeText(getApplicationContext(), "Hotspot Created", Toast.LENGTH_SHORT).show();
-                    setDefaultEDT(false);
+                        setDefaultEDT(false);
                     IS_ENABLE_HOSTPOT = true;
 
 
@@ -223,7 +221,7 @@ public class HostpotWifiActivity extends AppCompatActivity implements View.OnCli
 
                     tvOpen.setText("Open");
                     tvOpen.setTextColor(getResources().getColor(R.color.text_open_hotspot));
-                    tvOpen.setBackground(getResources().getDrawable(R.drawable.boder_bt_open_hostpot));
+                    tvOpen.setBackgroundDrawable(getResources().getDrawable(R.drawable.boder_bt_open_hostpot));
 
                     offHotspotWifi();
 
@@ -249,14 +247,14 @@ public class HostpotWifiActivity extends AppCompatActivity implements View.OnCli
                         etPass.setFocusable(false);
                         etPass.setFocusableInTouchMode(false);
                         etPass.setText("----------");
-                        etPass.setBackground(getResources().getDrawable(R.drawable.bg_editext_name));
+                        etPass.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_editext_name));
                     } else {
                         ivSwith.setImageResource(R.drawable.ic_swith_on);
                         IS_ON_PASSWORD = true;
                         etPass.setFocusable(true);
                         etPass.setFocusableInTouchMode(true);
                         etPass.setText("");
-                        etPass.setBackground(getResources().getDrawable(R.drawable.bg_edt_not_selected));
+                        etPass.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_edt_not_selected));
                     }
                 }
                 break;

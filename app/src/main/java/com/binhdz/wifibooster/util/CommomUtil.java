@@ -48,7 +48,7 @@ public class CommomUtil {
 
     public static String getStr(String s) {
         StringBuilder str = new StringBuilder(s);
-        str.deleteCharAt(s.length() - 1);
+        str.deleteCharAt(s.length()-1);
         str.deleteCharAt(0);
         return str.toString();
     }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,6 +69,8 @@ public class AdapterListWifi extends RecyclerView.Adapter<AdapterListWifi.WifiVi
 
             }
         } else {
+            Log.d("nghia","arrListWifi = " + arrListWifi.get(position).SSID);
+            Log.d("nghia","wifiConect = " + wifiConect.getSSID());
             if (arrListWifi.get(position).SSID.equals(CommomUtil.getStr(wifiConect.getSSID()))) {
                 holder.icCkeck.setVisibility(View.VISIBLE);
 

@@ -38,6 +38,12 @@ public class FloatWindowService extends Service implements Constants {
     private Timer timer;
     private WifiManager mWifiManager;
     private NetworkStateReceiver mNetworkStateReceiver;
+    private NotificationManager notificationmanager;
+
+    public static final int STATUS_BAR_NOTIFICATION = 10000;
+    RemoteViews views;
+    RemoteViews bigViews;
+    NotificationCompat.Builder notificationCompat;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -47,7 +53,7 @@ public class FloatWindowService extends Service implements Constants {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        notificationmanager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         mWifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(AppConstant.ACTION_CLICK_NOTIFICATION);
@@ -57,6 +63,13 @@ public class FloatWindowService extends Service implements Constants {
         IntentFilter filterNetworkChange = new IntentFilter();
         filterNetworkChange.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         filterNetworkChange.addAction("android.net.wifi.WIFI_STATE_CHANGED");
+
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP){
+            bigViews = new RemoteViews(getPackageName(), R.layout.notifi_bar_1);
+        }else {
+            bigViews = new RemoteViews(getPackageName(), R.layout.notifi_bar);
+        }
+
         mNetworkStateReceiver = new FloatWindowService.NetworkStateReceiver();
         registerReceiver(mNetworkStateReceiver, filterNetworkChange);
     }
@@ -90,8 +103,10 @@ public class FloatWindowService extends Service implements Constants {
     public void onDestroy() {
         super.onDestroy();
         // Stop Service
-        timer.cancel();
-        timer = null;
+        if(timer!=null) {
+            timer.cancel();
+            timer = null;
+        }
         sendBroadcast(new Intent("YouWillNeverKillMe"));
         if (mBroadcast != null) {
             unregisterReceiver(mBroadcast);
@@ -121,13 +136,7 @@ public class FloatWindowService extends Service implements Constants {
 
 
     //Notification
-    public static final int STATUS_BAR_NOTIFICATION = 10000;
-    RemoteViews views;
-    RemoteViews bigViews;
-    Notification status;
 
-    private NotificationManager notificationmanager;
-    Notification status1;
 
     private void updateSpeedBar(Context context, String speed) {
 
@@ -140,32 +149,18 @@ public class FloatWindowService extends Service implements Constants {
                 .build();
              bigViews.setImageViewResource(R.id.status_bar_icon,
                 R.drawable.ic_wifi_noti);*/
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            status1 = new NotificationCompat.Builder(context)
-                    .setAutoCancel(true)
-                    .setSmallIcon(getResources().getIdentifier(speed, "drawable", getPackageName()))
-                    .setContent(bigViews)
-                    .setOngoing(true)
-                    .setPriority(Notification.PRIORITY_MAX)
-                    .build();
-
-        } else {
-            status1.icon = getResources().getIdentifier(speed, "drawable", getPackageName());
-        }
-
-
-        notificationmanager.notify(STATUS_BAR_NOTIFICATION, status1);
+        notificationCompat = new NotificationCompat.Builder(this)
+                .setAutoCancel(true)
+                .setSmallIcon(getResources().getIdentifier(speed,"drawable",getPackageName()))
+                .setContent(bigViews)
+                .setOngoing(true);
+        notificationmanager.notify(STATUS_BAR_NOTIFICATION, notificationCompat.build());
     }
 
     private void showNotification(Context context) {
 
         try {
-            if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP){
-                bigViews = new RemoteViews(getPackageName(), R.layout.notifi_bar_1);
-            }else {
-                bigViews = new RemoteViews(getPackageName(), R.layout.notifi_bar);
-            }
+
             bigViews.setTextViewText(R.id.bar_noti__tv_name_wifi, "Not Wi-Fi");
             bigViews.setTextViewText(R.id.bar_noti__tv_connect, "Wi-Fi Connected");
             bigViews.setTextViewText(R.id.bar_noti__tv_speed_down, "0Kb");
@@ -178,13 +173,11 @@ public class FloatWindowService extends Service implements Constants {
 
             bigViews.setOnClickPendingIntent(R.id.layout_notification, piContent);
 
-            status1 = new NotificationCompat.Builder(context)
+            notificationCompat = new NotificationCompat.Builder(context)
                     .setAutoCancel(true)
                     .setSmallIcon(R.drawable.wifi_icon)
                     .setContent(bigViews)
-                    .setOngoing(true)
-                    .setPriority(Notification.PRIORITY_MAX)
-                    .build();
+                    .setOngoing(true);
 /*
 
        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
@@ -192,8 +185,8 @@ public class FloatWindowService extends Service implements Constants {
         }
 */
 
-            notificationmanager = (NotificationManager) getSystemService(context.NOTIFICATION_SERVICE);
-            notificationmanager.notify(STATUS_BAR_NOTIFICATION, status1);
+
+            notificationmanager.notify(STATUS_BAR_NOTIFICATION, notificationCompat.build());
 
 
         } catch (Exception e) {
