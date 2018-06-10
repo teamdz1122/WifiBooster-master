@@ -150,6 +150,7 @@ public class RealTimeProcess extends AppCompatActivity implements View.OnClickLi
         thread.start();
         LoadAppInBg loadAppInBg = new LoadAppInBg(this);
         loadAppInBg.execute();
+
         final NativeExpressAdView mAdView = new NativeExpressAdView(this);
         final AdRequest request = new AdRequest.Builder().build();
         mAdView.setAdSize(new AdSize(AdSize.FULL_WIDTH,AdSize.AUTO_HEIGHT));
@@ -180,6 +181,7 @@ public class RealTimeProcess extends AppCompatActivity implements View.OnClickLi
 
             @Override
             public void onAdLoaded() {
+                mContainerAd.setVisibility(View.VISIBLE);
                 super.onAdLoaded();
 
             }

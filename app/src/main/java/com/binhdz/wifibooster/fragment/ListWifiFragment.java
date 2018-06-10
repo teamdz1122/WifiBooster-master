@@ -56,9 +56,7 @@ import com.binhdz.wifibooster.view.dialog.DialogChangePassWifi;
 import com.binhdz.wifibooster.view.dialog.DialogConnectWifi;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.NativeExpressAdView;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -76,42 +74,50 @@ import static android.content.ContentValues.TAG;
 
 public class ListWifiFragment extends Fragment implements View.OnClickListener, OptionWifiListener, ShowBottomDialog {
     public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
-
+    private final Handler handler = new Handler();
     //view
     private MyTextView tvWifiConnect, tvSpeedUp, tvSpeedDown, tvBootWifi;
     private TextView tvLableWifiFree, tvLableWifiPass, tvLableWifiNonePass;
     private LinearLayout mLySpeed, mLyTurnOnWifi;
     private NestedScrollView mLyContent;
-
     private RecyclerView rcvListWifi, rcvListWifiFree, rcvListWifiNonePass;
     private View rootView;
-
     //adapter
     private AdapterListWifi adapterListWifi, adtListWifiNonePass;
     private AdapterListWifiFree mAdapterListWifiFree;
-
     // manager system
     private WifiManager mainWifi;
     private WifiReceiver receiverWifi;
     private NetworkStateReceiver mNetworkStateReceiver;
-
-
     //value
     private WifiInfo mWifiConnect;
-
     private List<WifiConfiguration> arrWifiConfig;
     private ArrayList<WifiConfiguration> arrWifiConfigEnable;
     private ArrayList<ScanResult> arrWifiFree;
     private ArrayList<ScanResult> arrWifiNonePass;
     private ArrayList<ScanResult> arrListWifi;
-
     private int isWifiConnected;
     private boolean isCanEnableWifi;
     private InterstitialAd mInterstitialAd;
-    private NativeExpressAdView mContainerAd;
+    private DecimalFormat showFloatFormat = new DecimalFormat("0.0");
+    private DecimalFormat byteFloatFormat = new DecimalFormat("0");
+    // receiver update speed
+    private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals(AppConstant.ACTION_UPDATE_SPEED_DOWN)) {
+                double speedDown = intent.getDoubleExtra(AppConstant.VALUE_SPEED_DOWN, 0);
+                tvSpeedDown.setText(showSpeed(speedDown));
+            }
 
-
-    private final Handler handler = new Handler();
+            if (intent.getAction().equals(AppConstant.ACTION_UPDATE_SPEED_UP)) {
+                double speedUp = intent.getDoubleExtra(AppConstant.VALUE_SPEED_UP, 0);
+                tvSpeedUp.setText(showSpeed(speedUp));
+            }
+        }
+    };
+    private Runnable mRunnableScanWifi;
+    private int positonWifiFree;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -124,42 +130,6 @@ public class ListWifiFragment extends Fragment implements View.OnClickListener, 
         intentFilter.addAction(AppConstant.ACTION_UPDATE_SPEED_UP);
 
         getActivity().registerReceiver(mBroadcastReceiver, intentFilter);
-
-
-        final NativeExpressAdView mAdView = new NativeExpressAdView(getActivity().getApplicationContext());
-        final AdRequest request = new AdRequest.Builder().build();
-        mAdView.setAdSize(new AdSize(AdSize.FULL_WIDTH,AdSize.AUTO_HEIGHT));
-        mAdView.setAdUnitId("ca-app-pub-9569615767688214/5083951357");
-        mContainerAd.addView(mAdView);
-        mAdView.loadAd(request);
-        mAdView.setAdListener(new AdListener() {
-            @Override
-            public void onAdClosed() {
-                super.onAdClosed();
-
-            }
-            @Override
-            public void onAdOpened() {
-                super.onAdOpened();
-            }
-
-            @Override
-            public void onAdLeftApplication() {
-                super.onAdLeftApplication();
-            }
-
-            @Override
-            public void onAdFailedToLoad(int i) {
-                super.onAdFailedToLoad(i);
-
-            }
-
-            @Override
-            public void onAdLoaded() {
-                super.onAdLoaded();
-
-            }
-        });
 
         mInterstitialAd = new InterstitialAd(getContext());
         mInterstitialAd.setAdUnitId("ca-app-pub-9569615767688214/1204964831");
@@ -177,25 +147,6 @@ public class ListWifiFragment extends Fragment implements View.OnClickListener, 
 
         return rootView;
     }
-
-    // receiver update speed
-    private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(AppConstant.ACTION_UPDATE_SPEED_DOWN)) {
-                double speedDown = intent.getDoubleExtra(AppConstant.VALUE_SPEED_DOWN, 0);
-                tvSpeedDown.setText(showSpeed(speedDown));
-            }
-
-            if (intent.getAction().equals(AppConstant.ACTION_UPDATE_SPEED_UP)) {
-                double speedUp = intent.getDoubleExtra(AppConstant.VALUE_SPEED_UP, 0);
-                tvSpeedUp.setText(showSpeed(speedUp));
-            }
-        }
-    };
-
-    private DecimalFormat showFloatFormat = new DecimalFormat("0.0");
-    private DecimalFormat byteFloatFormat = new DecimalFormat("0");
 
     private String showSpeed(double speed) {
         String speedString;
@@ -276,7 +227,6 @@ public class ListWifiFragment extends Fragment implements View.OnClickListener, 
 
     private void initView() {
 
-        mContainerAd = (NativeExpressAdView)rootView.findViewById(R.id.ads_list_wifi);
         arrListWifi = new ArrayList<>();
         arrWifiConfig = new ArrayList<>();
         arrWifiNonePass = new ArrayList<>();
@@ -371,6 +321,18 @@ public class ListWifiFragment extends Fragment implements View.OnClickListener, 
         itemNonePass.setOnLongClickListener(null);
     }
 
+    /*private WifiConfiguration getConfiguration(ArrayList<WifiConfiguration> arrWifiConfig, ScanResult mWifi) {
+        for (WifiConfiguration wifiConfiguration : arrWifiConfig) {
+            if (getStr(wifiConfiguration.SSID).equals(mWifi.SSID)) {
+                return wifiConfiguration;
+
+            }
+
+        }
+        return null;
+    }*/
+    // ckeck wifi da connect chua
+
     private void connectWifiFree(int position) {
         WifiConnector wifiConnector = new WifiConnector(arrWifiConfigEnable.get(position), getActivity());
 
@@ -415,18 +377,6 @@ public class ListWifiFragment extends Fragment implements View.OnClickListener, 
             }
         });
     }
-
-    /*private WifiConfiguration getConfiguration(ArrayList<WifiConfiguration> arrWifiConfig, ScanResult mWifi) {
-        for (WifiConfiguration wifiConfiguration : arrWifiConfig) {
-            if (getStr(wifiConfiguration.SSID).equals(mWifi.SSID)) {
-                return wifiConfiguration;
-
-            }
-
-        }
-        return null;
-    }*/
-    // ckeck wifi da connect chua
 
     private void updateListConfigEnable() {
         arrWifiConfigEnable.clear();
@@ -476,8 +426,6 @@ public class ListWifiFragment extends Fragment implements View.OnClickListener, 
         return str.toString();
     }
 
-    private Runnable mRunnableScanWifi;
-
     public void doInback() {
         mRunnableScanWifi = new Runnable() {
             @Override
@@ -492,13 +440,11 @@ public class ListWifiFragment extends Fragment implements View.OnClickListener, 
 
     }
 
-
     @Override
     public void onStop() {
 
         super.onStop();
     }
-
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
@@ -583,7 +529,6 @@ public class ListWifiFragment extends Fragment implements View.OnClickListener, 
         return true;
     }
 
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -659,8 +604,6 @@ public class ListWifiFragment extends Fragment implements View.OnClickListener, 
         Toast.makeText(getActivity(), getActivity().getString(R.string.forget_pass_suscess), Toast.LENGTH_SHORT).show();
     }
 
-    private int positonWifiFree;
-
     @Override
     public void Disconnect() {
         mainWifi.disconnect();
@@ -696,6 +639,61 @@ public class ListWifiFragment extends Fragment implements View.OnClickListener, 
             bottomSheetDialogFragment.setData(arrWifiFree.get(position), ListWifiFragment.this);
         } else {
             connectWifiFree(position);
+        }
+    }
+
+    @Override
+    public void onDestroyView() {
+        if (receiverWifi != null) {
+            LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(receiverWifi);
+            Log.d("LIST_WIFI", "CANG VOAI DOAI");
+        }
+        if (mBroadcastReceiver != null) {
+            getActivity().unregisterReceiver(mBroadcastReceiver);
+        }
+        if (mNetworkStateReceiver != null) {
+            LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(mNetworkStateReceiver);
+
+        }
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onDestroy() {
+        handler.removeCallbacks(mRunnableScanWifi);
+
+        super.onDestroy();
+    }
+
+    private String getNetworkType(Context context) {
+        TelephonyManager mTelephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        int networkType = mTelephonyManager.getNetworkType();
+        String name = mTelephonyManager.getNetworkOperatorName();
+
+        switch (networkType) {
+            case TelephonyManager.NETWORK_TYPE_GPRS:
+            case TelephonyManager.NETWORK_TYPE_EDGE:
+            case TelephonyManager.NETWORK_TYPE_CDMA:
+            case TelephonyManager.NETWORK_TYPE_1xRTT:
+            case TelephonyManager.NETWORK_TYPE_IDEN:
+
+                return name + " 2G";
+            case TelephonyManager.NETWORK_TYPE_UMTS:
+            case TelephonyManager.NETWORK_TYPE_EVDO_0:
+            case TelephonyManager.NETWORK_TYPE_EVDO_A:
+            case TelephonyManager.NETWORK_TYPE_HSDPA:
+            case TelephonyManager.NETWORK_TYPE_HSUPA:
+            case TelephonyManager.NETWORK_TYPE_HSPA:
+            case TelephonyManager.NETWORK_TYPE_EVDO_B:
+            case TelephonyManager.NETWORK_TYPE_EHRPD:
+            case TelephonyManager.NETWORK_TYPE_HSPAP:
+
+                return name + " 3G";
+            case TelephonyManager.NETWORK_TYPE_LTE:
+
+                return name + " 4G";
+            default:
+                return "Mobie data";
         }
     }
 
@@ -801,60 +799,5 @@ public class ListWifiFragment extends Fragment implements View.OnClickListener, 
 
         }
 
-    }
-
-    @Override
-    public void onDestroyView() {
-        if (receiverWifi != null) {
-            LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(receiverWifi);
-            Log.d("LIST_WIFI", "TAO CHET DAY");
-        }
-        if (mBroadcastReceiver != null) {
-            getActivity().unregisterReceiver(mBroadcastReceiver);
-        }
-        if (mNetworkStateReceiver != null) {
-            LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(mNetworkStateReceiver);
-
-        }
-        super.onDestroyView();
-    }
-
-    @Override
-    public void onDestroy() {
-        handler.removeCallbacks(mRunnableScanWifi);
-
-        super.onDestroy();
-    }
-
-    private String getNetworkType(Context context) {
-        TelephonyManager mTelephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-        int networkType = mTelephonyManager.getNetworkType();
-        String name = mTelephonyManager.getNetworkOperatorName();
-
-        switch (networkType) {
-            case TelephonyManager.NETWORK_TYPE_GPRS:
-            case TelephonyManager.NETWORK_TYPE_EDGE:
-            case TelephonyManager.NETWORK_TYPE_CDMA:
-            case TelephonyManager.NETWORK_TYPE_1xRTT:
-            case TelephonyManager.NETWORK_TYPE_IDEN:
-
-                return name + " 2G";
-            case TelephonyManager.NETWORK_TYPE_UMTS:
-            case TelephonyManager.NETWORK_TYPE_EVDO_0:
-            case TelephonyManager.NETWORK_TYPE_EVDO_A:
-            case TelephonyManager.NETWORK_TYPE_HSDPA:
-            case TelephonyManager.NETWORK_TYPE_HSUPA:
-            case TelephonyManager.NETWORK_TYPE_HSPA:
-            case TelephonyManager.NETWORK_TYPE_EVDO_B:
-            case TelephonyManager.NETWORK_TYPE_EHRPD:
-            case TelephonyManager.NETWORK_TYPE_HSPAP:
-
-                return name + " 3G";
-            case TelephonyManager.NETWORK_TYPE_LTE:
-
-                return name + " 4G";
-            default:
-                return "Mobie data";
-        }
     }
 }
