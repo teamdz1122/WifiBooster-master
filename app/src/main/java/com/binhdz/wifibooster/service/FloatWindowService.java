@@ -1,6 +1,7 @@
 package com.binhdz.wifibooster.service;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -16,6 +17,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.widget.RemoteViews;
 
 import com.binhdz.wifibooster.R;
@@ -44,7 +46,7 @@ public class FloatWindowService extends Service implements Constants {
     RemoteViews views;
     RemoteViews bigViews;
     NotificationCompat.Builder notificationCompat;
-
+    String NOTIFICATION_CHANNEL_ID = "my_channel_id_01";
     @Override
     public IBinder onBind(Intent intent) {
         return null;
@@ -140,27 +142,27 @@ public class FloatWindowService extends Service implements Constants {
 
     private void updateSpeedBar(Context context, String speed) {
 
-               /* status1 = new NotificationCompat.Builder(context)
-                .setAutoCancel(true)
-                .setSmallIcon( getResources().getIdentifier(speed,"drawable",getPackageName()))
-                .setContent(bigViews)
-                .setOngoing(true)
-                .setPriority(Notification.PRIORITY_MAX)
-                .build();
-             bigViews.setImageViewResource(R.id.status_bar_icon,
-                R.drawable.ic_wifi_noti);*/
-        notificationCompat = new NotificationCompat.Builder(this)
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "My Notifications", NotificationManager.IMPORTANCE_HIGH);
+            notificationmanager.createNotificationChannel(notificationChannel);
+        }
+        Log.d("nghia","image = " + speed);
+
+        notificationCompat = new NotificationCompat.Builder(this,NOTIFICATION_CHANNEL_ID)
                 .setAutoCancel(true)
                 .setSmallIcon(getResources().getIdentifier(speed,"drawable",getPackageName()))
                 .setContent(bigViews)
                 .setOngoing(true);
-        notificationmanager.notify(STATUS_BAR_NOTIFICATION, notificationCompat.build());
+        notificationmanager.notify(STATUS_BAR_NOTIFICATION, notificationCompat.build());*/
     }
 
     private void showNotification(Context context) {
 
-        try {
-
+        /*try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "My Notifications", NotificationManager.IMPORTANCE_HIGH);
+                notificationmanager.createNotificationChannel(notificationChannel);
+            }
             bigViews.setTextViewText(R.id.bar_noti__tv_name_wifi, "Not Wi-Fi");
             bigViews.setTextViewText(R.id.bar_noti__tv_connect, "Wi-Fi Connected");
             bigViews.setTextViewText(R.id.bar_noti__tv_speed_down, "0Kb");
@@ -173,25 +175,18 @@ public class FloatWindowService extends Service implements Constants {
 
             bigViews.setOnClickPendingIntent(R.id.layout_notification, piContent);
 
-            notificationCompat = new NotificationCompat.Builder(context)
+            notificationCompat = new NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
                     .setAutoCancel(true)
                     .setSmallIcon(R.drawable.wifi_icon)
                     .setContent(bigViews)
                     .setOngoing(true);
-/*
-
-       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            status1.bigContentView = bigViews;
-        }
-*/
-
 
             notificationmanager.notify(STATUS_BAR_NOTIFICATION, notificationCompat.build());
 
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
 // get speed

@@ -266,6 +266,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
                     Toast.makeText(getActivity(), getActivity().getString(R.string.setting_turn_off_status), Toast.LENGTH_SHORT).show();
                 } else {
                     isOnMobiData = true;
+                    isOnStatusNoti = true;
                     ivStatusNoti.setImageResource(R.drawable.ic_setting_swith_on);
                     mPreferenceUtil.saveBoolean(AppConstant.IS_ON_STATUS_NOTI, true);
                     Toast.makeText(getActivity(), getActivity().getString(R.string.setting_turn_on_status), Toast.LENGTH_SHORT).show();

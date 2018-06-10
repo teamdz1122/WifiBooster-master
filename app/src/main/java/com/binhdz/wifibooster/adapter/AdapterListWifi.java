@@ -69,8 +69,6 @@ public class AdapterListWifi extends RecyclerView.Adapter<AdapterListWifi.WifiVi
 
             }
         } else {
-            Log.d("nghia","arrListWifi = " + arrListWifi.get(position).SSID);
-            Log.d("nghia","wifiConect = " + wifiConect.getSSID());
             if (arrListWifi.get(position).SSID.equals(CommomUtil.getStr(wifiConect.getSSID()))) {
                 holder.icCkeck.setVisibility(View.VISIBLE);
 

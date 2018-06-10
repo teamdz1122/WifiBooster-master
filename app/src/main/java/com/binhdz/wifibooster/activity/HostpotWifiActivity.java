@@ -290,8 +290,8 @@ public class HostpotWifiActivity extends AppCompatActivity implements View.OnCli
                     boolean apstatus = (Boolean) method.invoke(wifiManager, netConfigHostpot, true);
                     for (Method isWifiApEnabledmethod : wmMethods) {
                         if (isWifiApEnabledmethod.getName().equals("isWifiApEnabled")) {
-                            while (!(Boolean) isWifiApEnabledmethod.invoke(wifiManager)) {
-                            }
+                            /*while (!(Boolean) isWifiApEnabledmethod.invoke(wifiManager)) {
+                            }*/
                             for (Method method1 : wmMethods) {
                                 if (method1.getName().equals(
                                         "getWifiApState")) {
