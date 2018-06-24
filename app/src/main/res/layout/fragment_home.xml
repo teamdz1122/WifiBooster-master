@@ -258,7 +258,7 @@
                         android:layout_marginTop="@dimen/_3sdp"
                         android:layout_toEndOf="@+id/iv_real_time_process_info"
                         android:layout_toRightOf="@+id/iv_real_time_process_info"
-                        android:text="30% of CPU Utilication"
+                        android:text="@string/_30_of_cpu_utilication"
                         android:textSize="12sp" />
                 </LinearLayout>
 

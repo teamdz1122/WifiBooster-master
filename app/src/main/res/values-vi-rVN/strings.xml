@@ -104,5 +104,6 @@
     <string name="flash_mode">Chế độ đèn flash</string>
     <string name="about">Giới thiệu</string>
     <string name="action_setting">Cài Đặt</string>
+    <string name="_30_of_cpu_utilication">Sử dụng 30% CPU</string>
 
 </resources>

@@ -1,0 +1,126 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Network Master</string>
+    <string name="permission_alert">androide 6.0</string>
+    <string name="permission_result">Por favor,Permite que la aplicación funcione!</string>
+    <string name="boot_wifi">Arranque de red</string>
+    <string name="password">Contraseña</string>
+    <string name="show_pass">Mostrar contraseña</string>
+    <string name="tv_cancel">Cancelar</string>
+    <string name="connect">Conectar</string>
+    <string name="free_wifi">Wi-Fi gratis</string>
+    <string name="pass_required">Se requiere contraseña</string>
+    <string name="scan">Exploración…</string>
+    <string name="speed_booted">Velocidad impulsada</string>
+    <string name="system_boot">System Boost</string>
+    <string name="app_in_background">Las aplicaciones están usando la red en segundo plano</string>
+    <string name="network_boot">Aumentar Red</string>
+    <string name="clear_system_cache">Borrar caché del sistema</string>
+    <string name="wifi_connect">Wi-Fi conectado</string>
+
+    // home
+
+    <dimen name="spacing_normal">2dp</dimen>
+
+    <string name="ckeck_again">Revisar otra vez</string>
+    <string name="set_password">Configurar la clave</string>
+    <string name="des_mobie_hostpot">Esta característica convierte su red 2/3 / 4G en un hostpot de WiFi. El combo de nombre y contraseña es muy recomendable para proyectar el uso de datos.</string>
+    <string name="please_input_name_hotspot">Por favor complete el nombre del punto de acceso</string>
+    <string name="please_input_pass_hotspot">Por favor complete la contraseña del punto de acceso</string>
+    <string name="mobie_hostpot">Punto de acceso móvil</string>
+    <string name="wifi_optimize">WiFi Optimize</string>
+    <string name="des_net_boost">Limpie las aplicaciones de fondo para obtener la mejor velocidad de red !</string>
+    <string name="real_cpu">Información del proceso en tiempo real</string>
+    <string name="bt_hostpot_wifi">Punto de acceso personal</string>
+    <string name="des_bt_hotspot_wifi">Tener un punto de acceso WiFi portátil fácilmente!</string>
+
+    <string name="not_network_connected">Ninguna de la red está conectada!</string>
+    <string name="mobie_data"></string>
+
+    //dialog bottom
+    <string name="bottom_dialog_check">Verificación de seguridad</string>
+    <string name="bottom_dialog_conntected">Prueba de conexión</string>
+    <string name="bottom_dialog_speed_test">Prueba de velocidad</string>
+    <string name="bottom_dialog_info">Wifi Información</string>
+    <string name="bottom_dialog_forget">Olvidar</string>
+    <string name="bottom_dialog_disconnect">Desconectar</string>
+    <string name="speed_is_booted">La velocidad aumenta</string>
+
+    <string name="ckeck_connect">Prueba de conexión</string>
+    <string name="ckeck_connect_des_1">Calibrar módulo inalámbrico</string>
+    <string name="ckeck_connect_des_2">Optimizar el módulo inalámbrico</string>
+    <string name="ckeck_connect_des_3">Seleccione una configurtion optima</string>
+    <string name="ckeck_connect_des_4">Optimizar la conexión de red</string>
+
+    <string name="ckeck_safe_des_1">Obteniendo información de Wi-Fi</string>
+    <string name="ckeck_safe_des_2">Comprobando el secuestro de DNS</string>
+    <string name="ckeck_safe_des_3">Comprobando el cifrado de Wi-Fi</string>
+    <string name="ckeck_safe_des_4">Comprobando las trampas de ARP</string>
+
+    <string name="setting_status_bar">Notificación de estado</string>
+    <string name="setting_free_wifi">Notificación de Wi-Fi gratis</string>
+    <string name="setting_screen_lock">Datos de bloqueo de pantalla</string>
+    <string name="setting_mobie_data">Informe diario del uso de datos de</string>
+    <string name="setting_rating_google">Calificación en google play</string>
+    <string name="bottom_dialog_connect">Conectar</string>
+    <string name="bottom_dialog_change_pass">Cambia La Contraseña</string>
+    <string name="list_wifi_none_pass">Wi-Fi Público</string>
+    <string name="warning_boots_network">Las aplicaciones ralentizan la velocidad de Wi-Fi, lo inician ahora!</string>
+    <string name="warning_cpu">Uso de la CPU superior al 50%, lo que hace que su teléfono esté caliente!</string>
+    <string name="enable_wifi">Wi-Fi deshabilitado</string>
+    <string name="des_enable_wifi">Abra Wi-Fi para obtener redes disponibles!</string>
+    <string name="turn_on_wifi">Encender</string>
+
+    <string name="state_connect_success">Conectar Exitosamente</string>
+    <string name="state_connect_error">Error de conexión</string>
+    <string name="title_splash">Pequeño, rápido y seguro</string>
+    <string name="scan_wifi" tools:ignore="TypographyEllipsis">Sanando Wi-Fi...</string>
+    <string name="opent_network">Red abierta</string>
+
+    <string name="setting_turn_on_status">Activar notificación de estado</string>
+    <string name="setting_turn_on_mobie">Activar el informe diario de uso de datos de Mobie</string>
+    <string name="setting_turn_on_screen">Active el motod de datos de bloqueo de pantalla</string>
+    <string name="setting_turn_on_free">Activar la notificación de Wi-Fi gratis</string>
+
+    <string name="setting_turn_off_status">Desactiva la notificación de estado</string>
+    <string name="setting_turn_off_mobie">Desactivar el informe diario de uso de datos de Mobie</string>
+    <string name="setting_turn_off_screen">Desactivar el motit de datos de bloqueo de pantalla</string>
+    <string name="setting_turn_off_free">Desactivar la notificación de Wi-Fi gratis</string>
+    <string name="encryption">Cifrado</string>
+    <string name="signal_strength">Intensidad de señal</string>
+    <string name="frequency">Frecuencia</string>
+    <string name="wifi_safe">Conectó este Wi-Fi antes, Wi-Fi seguro.</string>
+    <string name="wifi_never_connected">Nunca conecté este Wi-Fi antes.</string>
+    <string name="connect_anyway">Conectar de todos modos</string>
+
+    //them
+    <string name="check_connect_fail">Conexión fallida!</string>
+    <string name="ckeck_conenct_fail_des">No se puede conectar. Por favor revisa la red.</string>
+
+    <string name="check_connect_suscess">Optimizado en general!</string>
+    <string name="check_connect_sucsess_des">Todos los controles de seguridad pasaron.</string>
+    <string name="confirmation">Confirmación</string>
+    <string name="forget_pass_suscess">Olvídate de Wi-Fi</string>
+    <string name="stop">Detener</string>
+    <string name="open">Abierto</string>
+    <string name="name_app">Aplicación de nombre</string>
+    <string name="name_wifi">Nombre Wifi</string>
+    <string name="name_safe">Wifi seguro</string>
+    <string name="name">Nombre</string>
+    <string name="cancel">Cancelar</string>
+
+    <string name="mac">Mac</string>
+    <string name="connect_before">Conectar antes</string>
+    <string name="ma_hoa">Codificar</string>
+    <string name="fre_quency">Frecuencia</string>
+    <string name="ckeck">Comprobar</string>
+    <string name="boots_now">Boots ahora</string>
+    <string name="_10kb">10kb</string>
+    <string name="tab_home">Casa</string>
+    <string name="tab_wifi_expert">Experto WiFi</string>
+    <string name="tab_setting">Establecer</string>
+    <string name="language">"idioma "</string>
+    <string name="flash_mode">"Modo destello "</string>
+    <string name="about">Acerca de</string>
+    <string name="action_setting">"Ajuste "</string>
+    <string name="_30_of_cpu_utilication">30% de la utilización de la CPU</string>
+</resources>
